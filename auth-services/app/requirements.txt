@@ -1,0 +1,2 @@
+fastapi uvicorn sqlalchemy
+"pwdlib[argon]" PyJWT email-validator

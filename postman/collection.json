@@ -1,0 +1,115 @@
+{
+    "info": {
+        "name": "Student Management System",
+        "description": "API Gateway, authentication, students, courses and enrollments",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Gateway",
+            "item": [
+                {
+                    "name": "Home",
+                    "request": {
+                        "method": "GET",
+                        "url": "http://127.0.0.1:8000/"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Authentication",
+            "item": [
+                {
+                    "name": "Register",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"testuser@example.com\",\n  \"password\": \"TestPass123!\"\n}"
+                        },
+                        "url": "http://127.0.0.1:8000/auth/register"
+                    }
+                },
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"email\": \"testuser@example.com\",\n  \"password\": \"TestPass123!\"\n}"
+                        },
+                        "url": "http://127.0.0.1:8000/auth/login"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Students",
+            "item": [
+                {
+                    "name": "Get All Students",
+                    "request": {
+                        "method": "GET",
+                        "url": "http://127.0.0.1:8000/students"
+                    }
+                },
+                {
+                    "name": "Get Student by ID",
+                    "request": {
+                        "method": "GET",
+                        "url": "http://127.0.0.1:8000/students/1"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Courses and Enrollments",
+            "item": [
+                {
+                    "name": "Get All Courses",
+                    "request": {
+                        "method": "GET",
+                        "url": "http://127.0.0.1:8000/courses"
+                    }
+                },
+                {
+                    "name": "Enroll Student",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"student_id\": 1,\n  \"course_id\": 1\n}"
+                        },
+                        "url": "http://127.0.0.1:8000/enrollments"
+                    }
+                },
+                {
+                    "name": "Get Enrolled Students",
+                    "request": {
+                        "method": "GET",
+                        "url": "http://127.0.0.1:8000/courses/1/students"
+                    }
+                }
+            ]
+        }
+    ]
+}
